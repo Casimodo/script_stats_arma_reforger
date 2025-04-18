@@ -1,0 +1,11 @@
+{
+    "servers": [
+      {
+        "name": "Serveur RP 1",
+        "directory": "./playerstats",
+        "interval": 1800
+      }
+    ],
+    "discordWebhookUrl": "https://discord.com/api/webhooks/<YOUR DISCORD CHANEL>"
+  }
+  

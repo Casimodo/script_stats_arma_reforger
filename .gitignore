@@ -1,0 +1,24 @@
+# Fichiers Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Configuration locale Wi-Fi
+config.json
+
+# Fichiers système temporaires
+.DS_Store
+*.swp
+*.tmp
+
+# Fichiers de log
+logs/
+*.log
+
+# Fichiers systèmes de sauvegarde
+*.bak
+*~
+
+# Fichiers de build ou archives
+*.tar.gz
+*.zip
