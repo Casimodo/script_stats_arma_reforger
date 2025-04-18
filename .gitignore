@@ -13,6 +13,7 @@ config.json
 
 # Fichiers de log
 logs/
+playerstats/
 *.log
 
 # Fichiers systèmes de sauvegarde

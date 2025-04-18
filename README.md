@@ -1,7 +1,7 @@
 **Pour télécharger cliquer sur l'une des étiquettes ci-dessous**
 
-[![GitHub release](https://img.shields.io/github/v/release/Casimodo/my-app.svg)](https://github.com/Casimodo/my-app/releases)
-[![Github All Releases](https://img.shields.io/github/downloads/Casimodo/my-app/total.svg)](https://github.com/Casimodo/my-app/releases)
+[![GitHub release](https://img.shields.io/github/v/release/Casimodo/script_stats_arma_reforger.svg)](https://github.com/Casimodo/script_stats_arma_reforger/releases)
+[![Github All Releases](https://img.shields.io/github/downloads/Casimodo/script_stats_arma_reforger/total.svg)](https://github.com/Casimodo/script_stats_arma_reforger/releases)
 
 
 # 🧩 Objectif
