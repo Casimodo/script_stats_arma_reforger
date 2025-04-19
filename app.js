@@ -22,9 +22,9 @@ function readJsonFiles(directory) {
 // Formater le message Discord
 function formatDiscordMessage(serverName, players) {
   const header = `📊 **Statistiques - ${serverName}**\n\n`;
-  const tableHeader = `\`\`\`md\n# Joueur                  | Kills | Deaths | Ratio\n--------------------------------------------\n`;
+  const tableHeader = `\`\`\`md\n# Joueur                  | Kills | Deaths | Ratio | Score\n--------------------------------------------\n`;
   const tableRows = players.map(p =>
-    `${p.CM_PlayerName.padEnd(25)} | ${(p.CM_PlayerKillCount/2).toString().padEnd(5)} | ${p.CM_PlayerDeathCount.toString().padEnd(6)} | ${p.CM_PlayerKDRatio.toFixed(2)}`
+    `${p.CM_PlayerName.padEnd(25)} | ${(p.CM_PlayerKillCount/2).toString().padEnd(5)} | ${p.CM_PlayerDeathCount.toString().padEnd(6)} | ${p.CM_PlayerKDRatio.toFixed(2)} | ${p.score.toFixed(0)}`
   ).join('\n');
   const tableFooter = `\`\`\``;
 
@@ -46,8 +46,16 @@ function processServer(server) {
   const data = readJsonFiles(server.directory);
   if (!data.length) return;
 
-  const sorted = data.sort((a, b) => b.CM_PlayerKDRatio - a.CM_PlayerKDRatio);
+  // Ajout de la propriété score à chaque joueur
+  const enrichedData = data.map(player => {
+    //player.score = (player.CM_PlayerKillCount * 2) - player.CM_PlayerDeathCount; // Exemple de calcul
+    player.score = ((Math.pow(player.CM_PlayerKillCount,2) / (player.CM_PlayerDeathCount + 1)) * Math.log(player.CM_PlayerKillCount + 1)) / 100;
+    return player;
+  });
+
+  const sorted = data.sort((a, b) => b.score - a.score);
   const message = formatDiscordMessage(server.name, sorted);
+  console.log(message);
   sendToDiscord(message);
 }
 
