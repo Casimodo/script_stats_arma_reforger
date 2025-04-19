@@ -24,7 +24,7 @@ function formatDiscordMessage(serverName, players) {
   const header = `📊 **Statistiques - ${serverName}**\n\n`;
   const tableHeader = `\`\`\`md\n# Joueur                  | Kills | Deaths | Ratio\n--------------------------------------------\n`;
   const tableRows = players.map(p =>
-    `${p.CM_PlayerName.padEnd(25)} | ${p.CM_PlayerKillCount.toString().padEnd(5)} | ${p.CM_PlayerDeathCount.toString().padEnd(6)} | ${p.CM_PlayerKDRatio.toFixed(2)}`
+    `${p.CM_PlayerName.padEnd(25)} | ${(p.CM_PlayerKillCount/2).toString().padEnd(5)} | ${p.CM_PlayerDeathCount.toString().padEnd(6)} | ${p.CM_PlayerKDRatio.toFixed(2)}`
   ).join('\n');
   const tableFooter = `\`\`\``;
 
